@@ -6,6 +6,10 @@ defmodule Faker.Color do
   @doc """
   Return random RGB hex value.
   """
+
+  use Faker.Locale
+
+
   @spec rgb_hex() :: binary
   def rgb_hex do
     "~2.16.0B~2.16.0B~2.16.0B"
@@ -28,10 +32,7 @@ defmodule Faker.Color do
   @doc """
   Return a random color name
   """
-  @spec name() :: String.t
-  def name do
-    localised_module().name
-  end
+  localize :name
 
   @doc """
   Return a random fancy color name
